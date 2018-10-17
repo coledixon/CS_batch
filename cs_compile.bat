@@ -1,8 +1,11 @@
 @echo off
 title C# DRILL 18
 
-rem nav to dir
-cd /d "C:\Users\Cole Dixon\Desktop\CS_18"
+rem nav to desktop
+cd /d "%USERPROFILE%\Desktop"
+
+rem if / else for root
+IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile") ELSE (del mkdir "cs_compile")
 
 rem delete file if exists
 IF EXIST test.txt DEL /F test.txt

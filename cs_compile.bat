@@ -7,6 +7,10 @@ cd /d "%USERPROFILE%\Desktop"
 rem if / else for root
 IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile") ELSE (mkdir "cs_compile")
 
+rem nav to dir
+SET _dir = "%CD%"
+IF NOT dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
+
 rem delete file if exists
 IF EXIST test.txt DEL /F test.txt
 

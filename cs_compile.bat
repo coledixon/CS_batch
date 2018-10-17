@@ -10,6 +10,8 @@ IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_com
 rem nav to dir
 SET _dir = "%CD%"
 IF NOT _dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
+echo DIRECTORY SET
+PAUSE
 
 rem delete file if exists
 IF EXIST test.txt DEL /F test.txt
@@ -30,7 +32,7 @@ rem write cs file
 @echo 	{ >> test.txt 
 @echo 		Console.WriteLine("Hello, World");  >> test.txt
 @echo 		Console.ReadLine(); >> test.txt 
-@echo 		Console.WriteLine("This is a stupid drill.");  >> test.txt
+@echo 		Console.WriteLine("Automation saves lives.");  >> test.txt
 @echo 		Console.ReadLine(); >> test.txt 
 @echo 	} >> test.txt 
 @echo } >> test.txt 

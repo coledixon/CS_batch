@@ -13,7 +13,6 @@ SET _currdir = "%CD%"
 IF NOT _currdir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
 TIMEOUT 1
 echo -- COMPLETE
-PAUSE
 
 echo CLEAR EXISTING OBJECT(S) FROM ROOT
 rem delete file if exists
@@ -26,7 +25,6 @@ rem delete .dll if exists
 IF EXIST test.dll DEL /F test.dll
 TIMEOUT 1
 echo -- COMPLETE
-PAUSE
 
 echo WRITE C# FILE 
 rem write cs file
@@ -43,26 +41,22 @@ rem write cs file
 @echo } >> test.txt
 TIMEOUT 1 
 echo -- COMPLETE
-PAUSE
 
 echo COMPILE .EXE 
 rem compile .exe file
 cmd /C csc /target:exe test.txt
-TIMEOUT 1
+TIMEOUT 2
 echo -- COMPLETE
-PAUSE
 
 echo COMPILE .DLL 
 rem compile .dll file
 cmd /C csc /target:library test.txt
-TIMEOUT 1
+TIMEOUT 2
 echo -- COMPLETE
-PAUSE
 
 echo RUN .EXE
 rem run .exe
 start test.exe
-TIMEOUT 1
 echo -- COMPLETE
 PAUSE
 

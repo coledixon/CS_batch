@@ -1,12 +1,11 @@
 using System; 
-ECHO is off.
 class Test  
 { 
-  static void Main()  
+	static void Main()  
 	{  
 		Console.WriteLine("Hello, World");  
 		Console.ReadLine();  
-		Console.WriteLine("This is a stupid drill.");  
+		Console.WriteLine("Automation saves lives.");  
 		Console.ReadLine();  
-  }  
+	}  
 }  

@@ -6,13 +6,15 @@ cd /d "%USERPROFILE%\Desktop"
 
 rem if / else for root
 IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile") ELSE (mkdir "cs_compile")
+echo ROOT DIRECTORY SET
 
 rem nav to dir
 SET _dir = "%CD%"
 IF NOT _dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
-echo DIRECTORY SET
+echo -- COMPLETE
 PAUSE
 
+echo CLEAR EXISTING OBJECT(S) FROM ROOT
 rem delete file if exists
 IF EXIST test.txt DEL /F test.txt
 
@@ -21,9 +23,10 @@ IF EXIST test.exe DEL /F test.exe
 
 rem delete .dll if exists
 IF EXIST test.dll DEL /F test.dll
-echo DELETE OLD OBJECTS COMPLETE
+echo -- COMPLETE
 PAUSE
 
+echo WRITE C# FILE 
 rem write cs file
 @echo using System; > test.txt
 @echo class Test  >> test.txt
@@ -36,21 +39,25 @@ rem write cs file
 @echo 		Console.ReadLine(); >> test.txt 
 @echo 	} >> test.txt 
 @echo } >> test.txt 
-echo WRITE C# FILE COMPLETE
+echo -- COMPLETE
 PAUSE
 
+echo COMPILE .EXE 
 rem compile .exe file
 cmd /C csc /target:exe test.txt
-echo COMPILE .EXE COMPLETE
+echo -- COMPLETE
 PAUSE
 
+echo COMPILE .DLL 
 rem compile .dll file
 cmd /C csc /target:library test.txt
-echo COMPILE .DLL COMPLETE
+echo -- COMPLETE
 PAUSE
 
+echo RUN .EXE
 rem run .exe
 start test.exe
+echo -- COMPLETE
 PAUSE
 
 CLS

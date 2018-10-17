@@ -9,8 +9,8 @@ IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_com
 echo ROOT DIRECTORY SET
 
 rem nav to dir
-SET _dir = "%CD%"
-IF NOT _dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
+SET _currdir = "%CD%"
+IF NOT _currdir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
 TIMEOUT 1
 echo -- COMPLETE
 PAUSE

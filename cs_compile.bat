@@ -8,7 +8,7 @@ rem if / else for root
 IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile") ELSE (mkdir "cs_compile")
 echo ROOT DIRECTORY SET
 
-rem nav to dir
+rem nav to dir (if not set in if / else)
 SET _currdir = "%CD%"
 IF NOT _currdir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
 TIMEOUT 1

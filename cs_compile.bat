@@ -11,6 +11,7 @@ echo ROOT DIRECTORY SET
 rem nav to dir
 SET _dir = "%CD%"
 IF NOT _dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
+TIMEOUT 1
 echo -- COMPLETE
 PAUSE
 
@@ -23,6 +24,7 @@ IF EXIST test.exe DEL /F test.exe
 
 rem delete .dll if exists
 IF EXIST test.dll DEL /F test.dll
+TIMEOUT 1
 echo -- COMPLETE
 PAUSE
 
@@ -38,25 +40,29 @@ rem write cs file
 @echo 		Console.WriteLine("Automation saves lives.");  >> test.txt
 @echo 		Console.ReadLine(); >> test.txt 
 @echo 	} >> test.txt 
-@echo } >> test.txt 
+@echo } >> test.txt
+TIMEOUT 1 
 echo -- COMPLETE
 PAUSE
 
 echo COMPILE .EXE 
 rem compile .exe file
 cmd /C csc /target:exe test.txt
+TIMEOUT 1
 echo -- COMPLETE
 PAUSE
 
 echo COMPILE .DLL 
 rem compile .dll file
 cmd /C csc /target:library test.txt
+TIMEOUT 1
 echo -- COMPLETE
 PAUSE
 
 echo RUN .EXE
 rem run .exe
 start test.exe
+TIMEOUT 1
 echo -- COMPLETE
 PAUSE
 

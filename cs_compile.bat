@@ -9,7 +9,7 @@ IF EXIST "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_com
 
 rem nav to dir
 SET _dir = "%CD%"
-IF NOT dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
+IF NOT _dir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
 
 rem delete file if exists
 IF EXIST test.txt DEL /F test.txt

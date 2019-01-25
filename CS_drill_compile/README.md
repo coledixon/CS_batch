@@ -1,16 +1,18 @@
 # CS_drill_compile
 
--- simple batch file for reading a .txt file containing cs code, and compiling the script into CLI .exe
+-- simple batch file for reading .txt file(s) containing cs code, and compiling the script into CLI .exe
 
 
 ### INSTRUCTIONS:
 
--- place code from program.cs into cs.txt (Ctrl+C, Ctrl+V)
+1) place code from program.cs into cs.txt (Ctrl+C, Ctrl+V)
 
--- run cs_drill_compile.bat
+   -- if multi-class project, create a new class.txt file for each class following 1)
 
--- if ERRORLEVEL 1 during compile .exe || run .exe, cmd will output error message
+2) run cs_drill_compile.bat
 
--- cmd line application (drill) will run if ERRORLEVEL 0
+3) if ERRORLEVEL 1 during compile .exe || run .exe, cmd will output error message
 
--- cmd line closes after application complete
+4) cmd line application (drill) will run if ERRORLEVEL 0
+
+5) cmd line closes after application complete

@@ -12,7 +12,7 @@ rem nav to dir (if not set in if / else)
 SET _currdir = "%CD%"
 IF NOT _currdir == "%USERPROFILE%\Desktop\cs_compile" (cd /d "%USERPROFILE%\Desktop\cs_compile")
 TIMEOUT 1
-echo -- COMPLETE
+echo [92m-- COMPLETE[0m
 
 echo CLEAR EXISTING OBJECT(S) FROM ROOT
 rem delete file if exists
@@ -24,7 +24,7 @@ IF EXIST test.exe DEL /F test.exe
 rem delete .dll if exists
 IF EXIST test.dll DEL /F test.dll
 TIMEOUT 1
-echo -- COMPLETE
+echo [92m-- CLEAN-UP COMPLETE[0m
 
 echo WRITE C# FILE 
 rem write cs file
@@ -40,24 +40,48 @@ rem write cs file
 @echo 	} >> test.txt 
 @echo } >> test.txt
 TIMEOUT 1 
-echo -- COMPLETE
+echo [92m-- WRITE COMPLETE[0m
+
 
 echo COMPILE .EXE 
 rem compile .exe file
 cmd /C csc /target:exe test.txt
+rem error handling
+if ERRORLEVEL 1 (
+  echo [91mERROR COMPILING TEST.EXE[0m
+  PAUSE
+  CLS
+  EXIT
+)
+else (echo [92m-- COMPLETE[0m)
 TIMEOUT 2
-echo -- COMPLETE
+
 
 echo COMPILE .DLL 
 rem compile .dll file
 cmd /C csc /target:library test.txt
+rem error handling
+if ERRORLEVEL 1 (
+  echo [91mERROR COMPILING TEST.DLL[0m
+  PAUSE
+  CLS
+  EXIT
+)
+else (echo [92m-- COMPLETE[0m)
 TIMEOUT 2
-echo -- COMPLETE
+
 
 echo RUN .EXE
 rem run .exe
 start test.exe
-echo -- COMPLETE
+rem error handling
+if ERRORLEVEL 1 (
+  echo [91mERROR RUNNING TEST.EXE[0m
+  PAUSE
+  CLS
+  EXIT
+)
+else (echo [92m-- COMPLETE[0m)
 PAUSE
 
 CLS

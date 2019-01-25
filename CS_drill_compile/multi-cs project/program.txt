@@ -4,25 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnumDrill
+namespace NameMethodDrill2
 {
     class Program
     {
         static void Main(string[] args)
         {
+            //Employee name = new Employee();
+            //name.firstName = new List<string>() { "Sample" };
+            //name.lastName = new List<string>() { "Student" };
+            //name.SayName();
+            //Console.ReadLine();
 
-            Console.WriteLine("Please enter the current day of the week:");
-            try
-            {
-            string currentDay = Console.ReadLine();
-            Week.DaysOfTheWeek day = (Week.DaysOfTheWeek)Enum.Parse(typeof(Week.DaysOfTheWeek),currentDay);
-           
-                Console.WriteLine("The day is {0}.", day);
-            }
-            catch
-            {
-                Console.WriteLine("Please enter an actual day of the week.");
-            }
+            IQuittable quit = new Employee();
+            quit.EmployeeQuit = new List<string>() { "John" };
+            quit.Quit();
             Console.ReadLine();
         }
     }

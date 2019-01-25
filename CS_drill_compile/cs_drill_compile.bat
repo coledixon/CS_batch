@@ -26,8 +26,7 @@ if ERRORLEVEL 1 (
   PAUSE
   CLS
   EXIT
-)
-else (echo [92m-- COMPLETE[0m)
+) else (echo [92m-- COMPLETE[0m)
 TIMEOUT 2
 
 
@@ -40,8 +39,7 @@ if ERRORLEVEL 1 (
   PAUSE
   CLS
   EXIT
-)
-else (echo [92m-- COMPLETE[0m)
+) else (echo [92m-- COMPLETE[0m)
 PAUSE
 
 

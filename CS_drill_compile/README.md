@@ -7,7 +7,8 @@
 
 1) place code from program.cs into program.txt (Ctrl+C, Ctrl+V)
 
-   -- if multi-class project, create a new class.txt file for each class following 1)
+   -- if multi-class project, copy/paste cs from class cs files into the class_%.txt files in 'multi-cs project' folder
+    -- move associated classes to ROOT with program.txt
 
 2) run cs_drill_compile.bat
 

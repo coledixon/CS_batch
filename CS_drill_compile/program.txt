@@ -9,7 +9,7 @@ namespace ConsoleMathDrill
     class Program
     {
         static void Main()
-        // {
+        {
             //Step One:
             Console.WriteLine("Please input a number.");
             string timesFifty = Console.ReadLine();

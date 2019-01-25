@@ -1,26 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NameMethodDrill2
+
+namespace CreateAClassDrill
 {
-    public abstract class Person
+    public class Math
     {
-        public List<string> firstName { get; set; }
-        public List<string> lastName { get; set; }
-
-        public virtual void SayName()
+        public int Addition(int x, int y)
         {
-            foreach (string fname in firstName)
-            {
-                foreach (string lname in lastName)
-                {
-                    Console.WriteLine("Name: {0} {1}", fname, lname);
-                }
-            }
+            return x + y;
         }
 
+        public int Divide(int x, int y)
+        {
+            return x / y;
+        }
+
+        public int Multiply(int x, int y)
+        {
+            return x * y;
+        }
     }
 }

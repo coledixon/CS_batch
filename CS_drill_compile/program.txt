@@ -4,47 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleMathDrill
+namespace Drill22
 {
     class Program
     {
-        static void Main()
+        //1. Create an enum for the days of the week.
+        public enum DaysOfTheWeek
         {
-            //Step One:
-            Console.WriteLine("Please input a number.");
-            string timesFifty = Console.ReadLine();
-            Console.WriteLine("Your number multiplied by 50 is: ");
-            Console.WriteLine(Convert.ToDouble(timesFifty) * 50);
-            Console.ReadLine();
-
-            //Step Two:
-            Console.WriteLine("Type in any number.");
-            string add25 = Console.ReadLine();
-            Console.WriteLine("Your number plus 25 is: ");
-            Console.WriteLine(Convert.ToInt32(add25) + 25);
-            Console.ReadLine();
-
-            //Step Three:
-            Console.WriteLine("Input another number.");
-            string divide = Console.ReadLine();
-            Console.WriteLine("Your input divided by 12.5 is: ");
-            Console.WriteLine(Convert.ToDouble(divide) / 12.5);
-            Console.ReadLine();
-
-            //Step Four:
-            Console.WriteLine("Please input a number.");
-            string comparison = Console.ReadLine();
-            bool isGreater = Convert.ToDouble(comparison) > 50;
-            Console.WriteLine("Is your number greater than 50?");
-            Console.WriteLine(isGreater);
-            Console.ReadLine();
-
-            //Step Five:
-            Console.WriteLine("Type in a final number.");
-            string remainder = Console.ReadLine();
-            Console.WriteLine("Your number divided by 7 has a remainder of: ");
-            Console.WriteLine(Convert.ToDecimal(remainder) % 7);
-            Console.ReadLine();
+            Sunday,
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday
         }
+        static void Main(string[] args)
+        {
+            //2. Prompt the user to enter the current day of the week.
+            Console.WriteLine("Enter the current day of the week: ");
+
+            //4. Wrap the statement in a try/catch block and have it print 
+            //"Please enter an actual day of the week." to the console if an error occurs.
+            //3. Assign the value to a variable of that enum data type you just created.
+
+
+            try
+            {
+                DaysOfTheWeek dayEntered = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), Console.ReadLine());
+            }
+            catch (System.ArgumentException)
+            {
+                Console.WriteLine("Please enter an actual day of the week.");
+            }
+            Console.ReadLine();
+           
+            
+        }
+
     }
 }
